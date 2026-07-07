@@ -208,6 +208,7 @@
     object-fit: contain; display: block;
     filter: drop-shadow(0 18px 26px rgba(14,14,12,0.16));
     -webkit-user-drag: none; user-select: none; pointer-events: none;
+    background: none;
   }
 
   .stage-item[data-pos="center"] {
@@ -378,19 +379,19 @@
     <div class="stage" id="stage">
       <div class="stage-glow" id="stageGlow"></div>
 
-      <!-- Desktop PC — swap src for your own transparent PNG/WEBP -->
+      <!-- Desktop PC — real transparent PNG -->
       <button type="button" class="stage-item" id="item-0" data-index="0" aria-label="Show desktop PCs">
-        <img src="images/pc.jpg" alt="Desktop PC tower">
+        <img src="images/pc.png" alt="Desktop PC tower">
       </button>
 
-      <!-- Laptop — swap src for your own transparent PNG/WEBP -->
+      <!-- Laptop — real transparent PNG -->
       <button type="button" class="stage-item" id="item-1" data-index="1" aria-label="Show laptops">
-        <img src="images/laptop.jpg" alt="Laptop">
+        <img src="images/laptop.png" alt="Laptop">
       </button>
 
-      <!-- Keyboard & Mouse — swap src for your own transparent PNG/WEBP -->
+      <!-- Keyboard & Mouse — real transparent PNG -->
       <button type="button" class="stage-item" id="item-2" data-index="2" aria-label="Show keyboards and mice">
-        <img src="images/keyboard and mouse.jpg" alt="Keyboard and mouse">
+        <img src="images/keyboard-mouse.png" alt="Keyboard and mouse">
       </button>
     </div>
 
