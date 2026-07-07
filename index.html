@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laptops — Quality-checked laptops from R3,500</title>
-<meta name="description" content="Every laptop graded, battery-checked, and backed by a 7-day return window. Starting at R3,500. No account needed to browse.">
+<title>Laptops — Quality-checked PCs, laptops & accessories from R250</title>
+<meta name="description" content="Desktops, laptops, keyboards and mice — graded, tested, and backed by a 7-day return window. Starting at R250. No account needed to browse.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,11 +21,16 @@
     --ink-35:     rgba(14,14,12,0.35);
     --ink-12:     rgba(14,14,12,0.12);
     --ink-06:     rgba(14,14,12,0.06);
-    --accent:     #0A7A6E;
-    --accent-lt:  #EBF5F3;
-    --accent-mid: #12A898;
-    --amber:      #C2790A;
-    --amber-lt:   #FBF1E3;
+
+    --teal:       #0A7A6E;
+    --teal-lt:    #EBF5F3;
+    --lime:       #9CC232;
+    --lime-lt:    #F3F8E4;
+    --pink:       #B21361;
+    --pink-lt:    #FBEAF2;
+
+    --accent:     var(--teal);
+    --accent-lt:  var(--teal-lt);
     --rule:       rgba(14,14,12,0.10);
     --serif: 'Playfair Display', Georgia, serif;
     --sans:  'Syne', system-ui, sans-serif;
@@ -70,13 +75,13 @@
     letter-spacing: 0.3px; transition: background 0.2s, transform 0.15s;
   }
 
-  .nav-dl:hover { background: var(--accent); transform: translateY(-1px); }
+  .nav-dl:hover { background: var(--teal); transform: translateY(-1px); }
 
   /* ══ HERO (single screen) ══ */
   .hero {
     min-height: 100svh;
     display: grid;
-    grid-template-columns: 1fr min(46%, 500px);
+    grid-template-columns: 1fr min(48%, 540px);
     align-items: center;
     gap: clamp(24px, 4vw, 56px);
     max-width: 1280px;
@@ -92,25 +97,25 @@
 
   .hero-tag {
     display: inline-block; font-size: 10px; font-weight: 600;
-    letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent);
-    border: 1px solid rgba(10,122,110,0.22); background: var(--accent-lt);
+    letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal);
+    border: 1px solid rgba(10,122,110,0.22); background: var(--teal-lt);
     padding: 5px 13px; border-radius: 4px; margin-bottom: clamp(16px, 2.6vh, 26px);
     opacity: 0; animation: rise 0.6s 0.05s ease forwards;
   }
 
   .hero-h1 {
     font-family: var(--serif); font-weight: 400;
-    font-size: clamp(30px, 4.4vw, 64px);
-    line-height: 1.06; letter-spacing: -1.3px; color: var(--ink);
+    font-size: clamp(30px, 4.2vw, 60px);
+    line-height: 1.08; letter-spacing: -1.3px; color: var(--ink);
     margin-bottom: clamp(14px, 2vh, 22px);
     opacity: 0; animation: rise 0.65s 0.12s ease forwards;
   }
 
-  .hero-h1 em { font-style: italic; color: var(--accent); }
+  .hero-h1 em { font-style: italic; color: var(--teal); }
 
   .hero-desc {
     font-size: 15px; color: var(--ink-60); line-height: 1.75;
-    max-width: 440px; margin-bottom: clamp(20px, 3vh, 30px);
+    max-width: 460px; margin-bottom: clamp(20px, 3vh, 30px);
     opacity: 0; animation: rise 0.65s 0.2s ease forwards;
   }
 
@@ -123,13 +128,13 @@
 
   .check-tick {
     width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
-    background: var(--accent-lt); border: 1px solid rgba(10,122,110,0.35);
+    background: var(--teal-lt); border: 1px solid rgba(10,122,110,0.35);
     display: flex; align-items: center; justify-content: center;
   }
 
   .check-tick::after {
     content: ''; width: 5px; height: 3.5px;
-    border-left: 1.5px solid var(--accent); border-bottom: 1.5px solid var(--accent);
+    border-left: 1.5px solid var(--teal); border-bottom: 1.5px solid var(--teal);
     transform: rotate(-45deg) translateY(-1px);
   }
 
@@ -151,7 +156,7 @@
 
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--accent); color: var(--white);
+    background: var(--teal); color: var(--white);
     font-family: var(--sans); font-size: 14px; font-weight: 700;
     padding: 13px 22px; border-radius: 8px; text-decoration: none;
     box-shadow: 0 4px 16px rgba(10,122,110,0.24);
@@ -168,106 +173,134 @@
 
   .hero-meta-sep { color: var(--ink-12); }
 
-  /* ══ PHONE MOCKUP ══ */
+  /* ══ PRODUCT STAGE (replaces phone mockup) ══ */
   .hero-right {
-    position: relative; display: flex; justify-content: center;
+    position: relative; display: flex; flex-direction: column; align-items: center;
     opacity: 0; animation: rise 0.75s 0.22s ease forwards;
   }
 
-  .phone {
-    width: min(240px, 60vw); height: min(488px, 122vw);
-    background: var(--ink); border-radius: 34px; position: relative;
-    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.10) inset, 0 26px 54px rgba(14,14,12,0.22), 0 6px 16px rgba(14,14,12,0.10);
-    padding: 8px;
+  .stage {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: clamp(240px, 34vh, 300px);
   }
 
-  .phone::before {
-    content: ''; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
-    width: 58px; height: 15px; background: var(--ink); border-radius: 0 0 10px 10px; z-index: 5;
+  .stage-glow {
+    position: absolute; left: 50%; top: 50%;
+    width: 230px; height: 230px; border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(circle, var(--stage-glow, var(--teal-lt)) 0%, rgba(255,255,255,0) 72%);
+    transition: background 0.5s ease;
+    z-index: 0;
   }
 
-  .phone-screen {
-    width: 100%; height: 100%; background: var(--paper); border-radius: 27px;
-    overflow: hidden; display: flex; flex-direction: column; padding: 26px 12px 12px;
+  .stage-item {
+    position: absolute; left: 50%; top: 50%;
+    width: 168px;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.55s ease, filter 0.55s ease;
+    background: none; border: none; padding: 0;
   }
 
-  .ps-topbar { display: flex; align-items: center; gap: 8px; padding: 0 4px 12px; }
-  .ps-mark { width: 20px; height: 20px; border-radius: 5px; background: var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink: 0; }
-  .ps-mark svg { width: 11px; height: 11px; fill: var(--white); }
-  .ps-title { font-family: var(--serif); font-size: 13px; font-weight: 500; color: var(--ink); flex: 1; }
-  .ps-bell { width: 13px; height: 13px; border: 1.4px solid var(--ink-35); border-radius: 3px; }
+  .stage-item svg { width: 100%; height: auto; display: block; overflow: visible; }
 
-  .ps-search {
-    height: 30px; border-radius: 8px; background: var(--white);
-    border: 1px solid var(--rule); margin: 0 4px 10px;
-    display: flex; align-items: center; padding: 0 10px; gap: 6px;
+  .stage-item[data-pos="center"] {
+    transform: translate(-50%,-50%) scale(1) rotate(0deg);
+    z-index: 3; opacity: 1; filter: none; cursor: default;
   }
-  .ps-search-dot { width: 8px; height: 8px; border-radius: 50%; border: 1.4px solid var(--ink-12); flex-shrink: 0; }
-  .ps-search span { font-size: 9.5px; color: var(--ink-35); }
 
-  .ps-banner {
-    margin: 0 4px 10px; border-radius: 12px; padding: 14px;
-    background: var(--ink); position: relative; overflow: hidden;
+  .stage-item[data-pos="left"] {
+    transform: translate(calc(-50% - 118px), calc(-50% + 26px)) scale(0.62) rotate(-8deg);
+    z-index: 1; opacity: 0.45; filter: grayscale(0.35); cursor: pointer;
   }
-  .ps-banner-glow { position: absolute; top: -14px; left: -14px; width: 60px; height: 60px; border-radius: 50%; background: rgba(10,122,110,0.18); }
-  .ps-banner-title { font-family: var(--serif); font-size: 12px; font-weight: 500; color: var(--white); line-height: 1.3; position: relative; }
-  .ps-banner-sub { font-size: 8.5px; color: rgba(255,255,255,0.5); margin-top: 5px; position: relative; line-height: 1.5; }
 
-  .ps-cats { display: flex; gap: 6px; margin: 0 4px 10px; }
-  .ps-cat { font-size: 8px; font-weight: 500; color: var(--ink-60); background: var(--white); border: 1px solid var(--rule); border-radius: 100px; padding: 4px 10px; white-space: nowrap; }
+  .stage-item[data-pos="right"] {
+    transform: translate(calc(-50% + 118px), calc(-50% + 26px)) scale(0.62) rotate(8deg);
+    z-index: 1; opacity: 0.45; filter: grayscale(0.35); cursor: pointer;
+  }
 
-  .ps-feat-row { display: flex; justify-content: space-between; align-items: center; margin: 0 4px 8px; }
-  .ps-feat-row span:first-child { font-size: 11px; font-weight: 700; color: var(--ink); }
-  .ps-feat-row span:last-child { font-size: 8.5px; color: var(--ink-35); }
+  .stage-item[data-pos="left"]:hover,
+  .stage-item[data-pos="right"]:hover {
+    opacity: 0.72; filter: grayscale(0.1);
+  }
 
-  .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 4px; }
-  .ps-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 9px; }
-  .ps-card-thumb { height: 40px; border-radius: 6px; background: var(--paper-2); margin-bottom: 7px; display: flex; align-items: center; justify-content: center; }
-  .ps-card-thumb svg { width: 17px; height: 17px; fill: var(--ink-35); }
-  .ps-card-name { font-size: 8.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
-  .ps-card-price { font-size: 9px; color: var(--accent); font-weight: 600; }
+  .stage-item:focus-visible {
+    outline: 2px solid var(--ink); outline-offset: 6px; border-radius: 8px;
+  }
 
-  /* ══ GRADE TAG (signature element) ══ */
+  .stage-dots { display: flex; gap: 7px; justify-content: center; margin-top: 6px; }
+
+  .stage-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--ink-12);
+    border: none; padding: 0; cursor: pointer; transition: background 0.3s, transform 0.3s;
+  }
+
+  .stage-dot.is-active { background: var(--dot-color, var(--teal)); transform: scale(1.35); }
+
+  /* caption card */
+  .stage-caption {
+    width: 100%; max-width: 320px;
+    background: var(--white); border: 1px solid var(--rule); border-radius: 14px;
+    padding: 16px 18px; margin-top: 4px;
+    box-shadow: 0 14px 30px rgba(14,14,12,0.07);
+    border-left: 3px solid var(--cap-color, var(--teal));
+    transition: border-color 0.4s ease;
+  }
+
+  .cap-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+
+  .cap-name {
+    font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--ink);
+    transition: opacity 0.25s ease;
+  }
+
+  .cap-price {
+    font-size: 12.5px; font-weight: 700; color: var(--cap-color, var(--teal));
+    white-space: nowrap; transition: color 0.4s ease;
+  }
+
+  .cap-desc {
+    font-size: 12.5px; color: var(--ink-60); line-height: 1.6;
+    transition: opacity 0.25s ease;
+  }
+
+  .cap-fade { opacity: 0; }
+
+  /* grade tag */
   .grade-tag {
-    position: absolute; left: -20px; bottom: 30px;
-    width: 152px; background: var(--white); border: 1px solid var(--rule);
-    border-radius: 12px; padding: 13px 14px 14px;
-    box-shadow: 0 18px 34px rgba(14,14,12,0.16);
-    transform: rotate(-5deg);
+    position: absolute; right: -6px; top: 2px;
+    width: 128px; background: var(--white); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 11px 12px 12px;
+    box-shadow: 0 16px 30px rgba(14,14,12,0.14);
+    transform: rotate(4deg);
+    z-index: 4;
     opacity: 0; animation: tagRise 0.7s 0.62s cubic-bezier(0.2,0.7,0.3,1) forwards;
   }
 
-  .grade-tag::before {
-    content: ''; position: absolute; top: 9px; left: 9px; right: 9px; height: 0;
-    border-top: 1.5px dashed var(--ink-12);
-  }
-
-  .grade-tag::after {
-    content: ''; position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
-    width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1.5px solid var(--ink-12);
-  }
-
-  .gt-top { display: flex; align-items: center; gap: 9px; margin: 11px 0 10px; }
+  .gt-top { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
 
   .gt-badge {
-    width: 27px; height: 27px; border-radius: 50%; flex-shrink: 0;
-    border: 1.5px solid var(--amber); color: var(--amber); background: var(--amber-lt);
-    font-family: var(--serif); font-weight: 500; font-size: 13px;
+    width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+    border: 1.5px solid var(--gt-color, var(--teal)); color: var(--gt-color, var(--teal));
+    background: var(--gt-color-lt, var(--teal-lt));
+    font-family: var(--serif); font-weight: 500; font-size: 12px;
     display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.4s, color 0.4s, background 0.4s;
   }
 
-  .gt-badge-label { font-size: 9px; color: var(--ink-60); letter-spacing: 0.3px; line-height: 1.3; }
-  .gt-badge-label b { display: block; color: var(--ink); font-size: 11px; font-weight: 700; }
+  .gt-badge-label { font-size: 8.5px; color: var(--ink-60); letter-spacing: 0.3px; line-height: 1.3; }
+  .gt-badge-label b { display: block; color: var(--ink); font-size: 10px; font-weight: 700; }
 
-  .gt-battery { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
-  .gt-battery-shell { width: 40px; height: 8px; border: 1.4px solid var(--ink-35); border-radius: 2px; position: relative; padding: 1px; flex-shrink: 0; }
-  .gt-battery-shell::after { content: ''; position: absolute; right: -3px; top: 2px; width: 2px; height: 4px; background: var(--ink-35); border-radius: 0 1px 1px 0; }
-  .gt-battery-fill { width: 94%; height: 100%; background: var(--accent); border-radius: 1px; }
-  .gt-battery-pct { font-size: 9.5px; color: var(--ink-60); }
+  .gt-battery { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; }
+  .gt-battery-shell { width: 34px; height: 7px; border: 1.3px solid var(--ink-35); border-radius: 2px; position: relative; padding: 1px; flex-shrink: 0; }
+  .gt-battery-shell::after { content: ''; position: absolute; right: -3px; top: 1.6px; width: 2px; height: 3.4px; background: var(--ink-35); border-radius: 0 1px 1px 0; }
+  .gt-battery-fill { width: 94%; height: 100%; background: var(--gt-color, var(--teal)); border-radius: 1px; transition: background 0.4s; }
+  .gt-battery-pct { font-size: 8.5px; color: var(--ink-60); }
 
-  .gt-price { display: flex; align-items: baseline; gap: 7px; padding-top: 10px; border-top: 1px solid var(--rule); }
-  .gt-price-new { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--ink); }
-  .gt-price-old { font-size: 10px; color: var(--ink-35); text-decoration: line-through; }
+  .gt-price { display: flex; align-items: baseline; gap: 6px; padding-top: 8px; border-top: 1px solid var(--rule); }
+  .gt-price-new { font-family: var(--serif); font-size: 13px; font-weight: 500; color: var(--ink); }
+  .gt-price-old { font-size: 9px; color: var(--ink-35); text-decoration: line-through; }
 
   /* ══ FOOTER ══ */
   footer { background: var(--paper); border-top: 1px solid var(--rule); padding: 30px clamp(20px, 4vw, 48px); }
@@ -289,8 +322,8 @@
   }
 
   @keyframes tagRise {
-    from { opacity: 0; transform: rotate(-5deg) translateY(10px); }
-    to   { opacity: 1; transform: rotate(-5deg) translateY(0); }
+    from { opacity: 0; transform: rotate(4deg) translateY(10px); }
+    to   { opacity: 1; transform: rotate(4deg) translateY(0); }
   }
 </style>
 </head>
@@ -305,23 +338,23 @@
   <div class="hero-left">
     <div class="hero-tag">Graded &middot; battery-checked &middot; returnable</div>
 
-    <h1 class="hero-h1">Good laptops shouldn&rsquo;t<br>cost like <em>new ones.</em></h1>
+    <h1 class="hero-h1">Good tech shouldn&rsquo;t<br>cost like <em>new tech.</em></h1>
 
-    <p class="hero-desc">Every laptop on Laptops is graded, battery-tested, and backed by a 7-day return window &mdash; starting at R3,500.</p>
+    <p class="hero-desc">Desktops, laptops, keyboards and mice &mdash; every item graded, tested, and backed by a 7-day return window, starting at R250.</p>
 
     <div class="checklist">
       <div class="check-item"><span class="check-tick"></span>Graded A to C, so you know exactly what you&rsquo;re getting</div>
-      <div class="check-item"><span class="check-tick"></span>Battery health checked before it ships</div>
+      <div class="check-item"><span class="check-tick"></span>Battery and hardware checked before it ships</div>
       <div class="check-item"><span class="check-tick"></span>7-day returns if it&rsquo;s not right</div>
       <div class="check-item"><span class="check-tick"></span>Browse the full range without creating an account</div>
     </div>
 
     <div class="cats">
-      <span class="cat-chip">Everyday</span>
-      <span class="cat-chip">Student</span>
-      <span class="cat-chip">Business</span>
+      <span class="cat-chip">Desktops</span>
+      <span class="cat-chip">Laptops</span>
+      <span class="cat-chip">Keyboards</span>
+      <span class="cat-chip">Mice</span>
       <span class="cat-chip">Gaming</span>
-      <span class="cat-chip">Ultrabook</span>
     </div>
 
     <div class="cta-row">
@@ -337,57 +370,73 @@
   </div>
 
   <div class="hero-right">
-    <div class="phone">
-      <div class="phone-screen">
-        <div class="ps-topbar">
-          <span class="ps-mark"><svg viewBox="0 0 24 24"><path d="M4 4h16v11H4V4zm-1 13h18a1 1 0 011 1 2 2 0 01-2 2H4a2 2 0 01-2-2 1 1 0 011-1z"/></svg></span>
-          <span class="ps-title">Laptops</span>
-          <span class="ps-bell"></span>
-        </div>
+    <div class="stage" id="stage">
+      <div class="stage-glow" id="stageGlow"></div>
 
-        <div class="ps-search"><span class="ps-search-dot"></span><span>Search laptops&hellip;</span></div>
+      <!-- Desktop PC -->
+      <button type="button" class="stage-item" id="item-0" data-index="0" aria-label="Show desktop PCs">
+        <svg viewBox="0 0 160 140" fill="none">
+          <rect x="18" y="12" width="92" height="62" rx="4" stroke="currentColor" stroke-width="3.5"/>
+          <line x1="18" y1="60" x2="110" y2="60" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+          <line x1="64" y1="74" x2="64" y2="90" stroke="currentColor" stroke-width="3.5"/>
+          <line x1="44" y1="98" x2="84" y2="98" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <rect x="118" y="30" width="26" height="70" rx="4" stroke="currentColor" stroke-width="3.5"/>
+          <circle cx="131" cy="40" r="2.6" fill="currentColor"/>
+          <line x1="124" y1="52" x2="138" y2="52" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <line x1="124" y1="60" x2="138" y2="60" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <line x1="124" y1="88" x2="138" y2="88" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+        </svg>
+      </button>
 
-        <div class="ps-banner">
-          <div class="ps-banner-glow"></div>
-          <div class="ps-banner-title">Quality-checked laptops<br>from R3,500</div>
-          <div class="ps-banner-sub">Every device graded and battery-checked, with 7-day returns.</div>
-        </div>
+      <!-- Laptop -->
+      <button type="button" class="stage-item" id="item-1" data-index="1" aria-label="Show laptops">
+        <svg viewBox="0 0 160 120" fill="none">
+          <rect x="34" y="10" width="92" height="60" rx="4" stroke="currentColor" stroke-width="3.5"/>
+          <line x1="34" y1="58" x2="126" y2="58" stroke="currentColor" stroke-width="2" opacity="0.4"/>
+          <path d="M14 92 L34 70 H126 L146 92 Z" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
+          <line x1="70" y1="92" x2="90" y2="92" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+      </button>
 
-        <div class="ps-cats">
-          <span class="ps-cat">Everyday</span>
-          <span class="ps-cat">Student</span>
-          <span class="ps-cat">Business</span>
-        </div>
-
-        <div class="ps-feat-row"><span>Featured</span><span>See all</span></div>
-
-        <div class="ps-grid">
-          <div class="ps-card">
-            <div class="ps-card-thumb"><svg viewBox="0 0 24 24"><path d="M4 4h16v11H4V4zm-1 13h18a1 1 0 011 1 2 2 0 01-2 2H4a2 2 0 01-2-2 1 1 0 011-1z"/></svg></div>
-            <div class="ps-card-name">ThinkPad T14</div>
-            <div class="ps-card-price">R7,200</div>
-          </div>
-          <div class="ps-card">
-            <div class="ps-card-thumb"><svg viewBox="0 0 24 24"><path d="M4 4h16v11H4V4zm-1 13h18a1 1 0 011 1 2 2 0 01-2 2H4a2 2 0 01-2-2 1 1 0 011-1z"/></svg></div>
-            <div class="ps-card-name">MacBook Air 13&Prime;</div>
-            <div class="ps-card-price">R11,999</div>
-          </div>
-        </div>
-      </div>
+      <!-- Keyboard & Mouse -->
+      <button type="button" class="stage-item" id="item-2" data-index="2" aria-label="Show keyboards and mice">
+        <svg viewBox="0 0 170 110" fill="none">
+          <rect x="8" y="30" width="112" height="56" rx="7" stroke="currentColor" stroke-width="3.5"/>
+          <circle cx="26" cy="45" r="2.4" fill="currentColor"/><circle cx="40" cy="45" r="2.4" fill="currentColor"/><circle cx="54" cy="45" r="2.4" fill="currentColor"/><circle cx="68" cy="45" r="2.4" fill="currentColor"/><circle cx="82" cy="45" r="2.4" fill="currentColor"/><circle cx="96" cy="45" r="2.4" fill="currentColor"/>
+          <circle cx="26" cy="58" r="2.4" fill="currentColor"/><circle cx="40" cy="58" r="2.4" fill="currentColor"/><circle cx="54" cy="58" r="2.4" fill="currentColor"/><circle cx="68" cy="58" r="2.4" fill="currentColor"/><circle cx="82" cy="58" r="2.4" fill="currentColor"/><circle cx="96" cy="58" r="2.4" fill="currentColor"/>
+          <line x1="20" y1="71" x2="60" y2="71" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.7"/>
+          <path d="M138 20 C 156 20 160 36 160 52 C 160 70 154 86 138 86 C 122 86 116 70 116 52 C 116 36 120 20 138 20 Z" stroke="currentColor" stroke-width="3.5"/>
+          <line x1="138" y1="20" x2="138" y2="46" stroke="currentColor" stroke-width="2.4" opacity="0.6"/>
+        </svg>
+      </button>
     </div>
 
-    <div class="grade-tag">
+    <div class="stage-dots" id="stageDots">
+      <button type="button" class="stage-dot" data-index="0" aria-label="Desktop PCs"></button>
+      <button type="button" class="stage-dot" data-index="1" aria-label="Laptops"></button>
+      <button type="button" class="stage-dot" data-index="2" aria-label="Keyboards and mice"></button>
+    </div>
+
+    <div class="stage-caption" id="stageCaption">
+      <div class="cap-top">
+        <span class="cap-name" id="capName">Laptops</span>
+        <span class="cap-price" id="capPrice">From R3,500</span>
+      </div>
+      <p class="cap-desc" id="capDesc">Every laptop graded A to C and battery-checked before it leaves the warehouse.</p>
+    </div>
+
+    <div class="grade-tag" id="gradeTag">
       <div class="gt-top">
-        <span class="gt-badge">A</span>
-        <span class="gt-badge-label">GRADE<b>Excellent</b></span>
+        <span class="gt-badge" id="gtBadge">A</span>
+        <span class="gt-badge-label">GRADE<b id="gtLabel">Excellent</b></span>
       </div>
       <div class="gt-battery">
         <span class="gt-battery-shell"><span class="gt-battery-fill"></span></span>
-        <span class="gt-battery-pct">94% battery</span>
+        <span class="gt-battery-pct">94% health</span>
       </div>
       <div class="gt-price">
-        <span class="gt-price-new">R6,499</span>
-        <span class="gt-price-old">R11,999</span>
+        <span class="gt-price-new" id="gtPriceNew">R6,499</span>
+        <span class="gt-price-old" id="gtPriceOld">R11,999</span>
       </div>
     </div>
   </div>
@@ -409,6 +458,125 @@
   window.addEventListener('scroll', function() {
     document.getElementById('mainNav').style.height = window.scrollY > 50 ? '52px' : '62px';
   }, { passive: true });
+
+  // ══ Product rotator ══
+  var products = [
+    {
+      name: 'Desktop PCs',
+      desc: 'Full towers ready to plug in and go, from quiet office minis to gaming rigs.',
+      price: 'From R5,200',
+      color: 'var(--teal)',
+      colorLt: 'var(--teal-lt)',
+      grade: 'A',
+      gradeLabel: 'Excellent',
+      battery: '—',
+      priceNew: 'R7,800',
+      priceOld: 'R14,500'
+    },
+    {
+      name: 'Laptops',
+      desc: 'Every laptop graded A to C and battery-checked before it leaves the warehouse.',
+      price: 'From R3,500',
+      color: 'var(--lime)',
+      colorLt: 'var(--lime-lt)',
+      grade: 'A',
+      gradeLabel: 'Excellent',
+      battery: '94% health',
+      priceNew: 'R6,499',
+      priceOld: 'R11,999'
+    },
+    {
+      name: 'Keyboards & Mice',
+      desc: 'Mechanical, wireless and ergonomic sets, tested key by key, click by click.',
+      price: 'From R250',
+      color: 'var(--pink)',
+      colorLt: 'var(--pink-lt)',
+      grade: 'B',
+      gradeLabel: 'Very good',
+      battery: '—',
+      priceNew: 'R450',
+      priceOld: 'R899'
+    }
+  ];
+
+  var current = 1; // start centered on Laptops
+  var stage = document.getElementById('stage');
+  var glow = document.getElementById('stageGlow');
+  var items = [0, 1, 2].map(function (i) { return document.getElementById('item-' + i); });
+  var dots = document.querySelectorAll('.stage-dot');
+
+  var capName = document.getElementById('capName');
+  var capPrice = document.getElementById('capPrice');
+  var capDesc = document.getElementById('capDesc');
+  var capCard = document.getElementById('stageCaption');
+
+  var gtBadge = document.getElementById('gtBadge');
+  var gtLabel = document.getElementById('gtLabel');
+  var gtPriceNew = document.getElementById('gtPriceNew');
+  var gtPriceOld = document.getElementById('gtPriceOld');
+  var gradeTag = document.getElementById('gradeTag');
+
+  function mod(n, m) { return ((n % m) + m) % m; }
+
+  function renderPositions() {
+    var leftIdx = mod(current - 1, 3);
+    var rightIdx = mod(current + 1, 3);
+    items.forEach(function (el, i) {
+      if (i === current) el.setAttribute('data-pos', 'center');
+      else if (i === leftIdx) el.setAttribute('data-pos', 'left');
+      else el.setAttribute('data-pos', 'right');
+    });
+    dots.forEach(function (d) {
+      var idx = parseInt(d.getAttribute('data-index'), 10);
+      d.classList.toggle('is-active', idx === current);
+      d.style.setProperty('--dot-color', products[idx].color);
+    });
+  }
+
+  function renderText() {
+    var p = products[current];
+    [capName, capDesc].forEach(function (el) { el.classList.add('cap-fade'); });
+
+    setTimeout(function () {
+      capName.textContent = p.name;
+      capPrice.textContent = p.price;
+      capDesc.textContent = p.desc;
+      [capName, capDesc].forEach(function (el) { el.classList.remove('cap-fade'); });
+
+      gtBadge.textContent = p.grade;
+      gtLabel.textContent = p.gradeLabel;
+      gtPriceNew.textContent = p.priceNew;
+      gtPriceOld.textContent = p.priceOld;
+    }, 180);
+
+    capCard.style.setProperty('--cap-color', p.color);
+    gradeTag.style.setProperty('--gt-color', p.color);
+    gradeTag.style.setProperty('--gt-color-lt', p.colorLt);
+    glow.style.setProperty('--stage-glow', p.colorLt);
+
+    items.forEach(function (el, i) { el.style.color = products[i].color; });
+  }
+
+  function goTo(index) {
+    if (index === current) return;
+    current = index;
+    renderPositions();
+    renderText();
+  }
+
+  items.forEach(function (el, i) {
+    el.addEventListener('click', function () { goTo(i); });
+  });
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { goTo(parseInt(d.getAttribute('data-index'), 10)); });
+  });
+
+  renderPositions();
+  renderText();
+  // set initial colors without the fade delay
+  capName.textContent = products[current].name;
+  capPrice.textContent = products[current].price;
+  capDesc.textContent = products[current].desc;
 </script>
 
 </body>
